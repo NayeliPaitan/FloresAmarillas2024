@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRUEBA 1 UNIR GATO CON CARTA EN UNA MISMA PAGINA</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace a tu archivo CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="container">
+        <!-- MENSAJE -->
+        <div class="message">
+            <h1 id="greeting"></h1>
+            <p>Tengo una carta para ti.</p>
+        </div>
+        <!-- CARTA -->
+        <div class="carta"> <!-- Aquí es donde está el div con clase "carta" -->
+            <a href="../carta/PARATI.html">
+                <div class="letter-image">
+                    <div class="animated-mail">
+                        <div class="back-fold"></div> <!-- Parte trasera del sobre -->
+                        <div class="letter">
+                            <div class="letter-border"></div> <!-- Borde de la carta -->
+                            <div class="letter-title"></div> <!-- Título de la carta -->
+                            <div class="letter-context"></div> <!-- Contenido de la carta -->
+                            <div class="letter-stamp"> <!-- Sello de la carta -->
+                                <div class="letter-stamp-inner"></div>
+                            </div>
+                        </div>
+                        <div class="top-fold"></div> <!-- Parte superior del sobre -->
+                        <div class="body"></div> <!-- Cuerpo del sobre -->
+                        <div class="left-fold"></div> <!-- Parte izquierda del sobre -->
+                    </div>
+                    <div class="shadow"></div> <!-- Sombra del sobre -->
+                </div>
+            </a>
+        </div>   
+    </div>
+    <div class="cat">
+        <div class="ear ear--left"></div>
+        <div class="ear ear--right"></div>
+        <div class="face">
+            <div class="eye eye--left">
+                <div class="eye-pupil"></div> <!-- Pupila izquierda -->
+            </div>
+            <div class="eye eye--right">
+                <div class="eye-pupil"></div> <!-- Pupila derecha -->
+            </div>
+            <!-- bigote del gato -->
+            <div class="bigote1"></div>
+            <div class="bigote2"></div>
+            <!-- separacion bigote de nariz -->
+            <div class="circulo"></div>
+            <!-- Hocico del gato -->
+            <div class="muzzle"></div>
+            <div class="muzzle1"></div> 
+            <!-- BOCA del gato -->
+            <div class="Boca-curvada"></div>
+            <div class="Boca-curvada1"></div>
+        </div>
+    </div>
+    <script>
+        // Recuperar el nombre de localStorage
+        const name = localStorage.getItem('userName') || 'Usuario';
+        document.getElementById('greeting').textContent = `¡Hola, ${name}!`;
+    </script>
+</body>
+</html>

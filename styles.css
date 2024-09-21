@@ -1,0 +1,82 @@
+body { 
+    background-color: #010113; /* Fondo llamativo */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px; /* Añadir padding para evitar que el contenido toque los bordes en dispositivos pequeños */
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(248, 248, 248, 0.986);
+    padding: 20px;
+    width: 90%; /* Ajuste por defecto para pantallas pequeñas */
+    max-width: 400px; /* Máximo ancho para pantallas grandes */
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px; /* Tamaño de fuente adaptable */
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Ajustar al contenedor */
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px; /* Ajuste para una apariencia consistente */
+    background-color: #6dafec; /* Color del botón */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.1); /* Animación de escalado */
+}
+
+/* Media queries para ajustar estilos según el tamaño de la pantalla */
+@media (min-width: 768px) {
+    .container {
+        padding: 40px;
+        width: 60%;
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    input[type="text"] {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 40%;
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+}

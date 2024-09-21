@@ -1,0 +1,479 @@
+:root {
+    --color-black: #161616; /* Color negro para el gato */
+    --color-white: #fff; /* Color blanco para las partes del gato */
+    --background-color: #f0f0f0; /* Color de fondo */
+    --size: 170px; /* Tamaño totalmente responsivo */
+}
+
+/* Estilo del cuerpo */
+body {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0;
+    background-color: var(--background-color); /* Color de fondo */
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #010113 /* Color de fondo de la página */
+}
+/* Estilo del gato */
+.cat {
+    position: relative;
+    height: var(--size); /* Altura del gato */
+    width: calc(var(--size) * 1.13); /* Ancho del gato, ligeramente más ancho */
+}
+
+/* Estilo de las orejas */
+.ear {
+    position: absolute;
+    top: -30%; /* Posición arriba del gato */
+    height: 85%; /* Altura de las orejas */
+    width: 50%; /* Ancho de las orejas */
+    background: #ffffff; /* Color de fondo blanco */
+}
+
+/* Pelo de las orejas */
+.ear::before,
+.ear::after {
+    
+    position: absolute;
+    bottom: 50%; /* Posición del pelo en la oreja */
+    height: 10%; /* Altura del pelo */
+    width: 5%; /* Ancho del pelo */
+    border-radius: 50%; /* Forma redondeada */
+    background: black; /* Color negro para el pelo */
+}
+
+.ear::after {
+    transform-origin: 50% 100%; /* Punto de origen para la transformación */
+}
+
+/* Estilo de la oreja izquierda */
+.ear--left {
+    left: -7%; /* Desplazamiento a la izquierda */
+    border-radius: 30% 70% 0% 0% / 100% 100% 0% 0%; /* Forma de la oreja */
+    transform: rotate(-30deg); /* Rotación de la oreja */
+}
+
+.ear--left::before,
+.ear--left::after {
+    right: 10%; /* Posicionamiento del pelo */
+}
+
+.ear--left::after {
+    transform: rotate(-45deg); /* Rotación del pelo */
+}
+
+/* Estilo de la oreja derecha */
+.ear--right {
+    right: -7%; /* Desplazamiento a la derecha */
+    border-radius: 0% 0% 30% 70% / 0% 0% 100% 100%; /* Forma de la oreja */
+    transform: rotate(200deg); /* Rotación de la oreja */
+}
+
+.ear--right::before,
+.ear--right::after {
+    left: 10%; /* Posicionamiento del pelo */
+}
+
+.ear--right::after {
+    transform: rotate(45deg); /* Rotación del pelo */
+}
+
+/* Estilo de la cara */
+.face {
+    position: absolute;
+    height: 100%; /* Altura de la cara */
+    width: 100%; /* Ancho de la cara */
+    background: black; /* Color negro para la cara */
+    border-radius: 60%; /* Forma redondeada */
+}
+
+/* Estilo de los ojos */
+.eye {
+    position: absolute;
+    top: 35%; /* Posicionamiento vertical de los ojos */
+    height: 35%; /* Altura de los ojos */
+    width: 35%; /* Ancho de los ojos */
+    background: var(--color-white); /* Color blanco para los ojos */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Forma de los ojos */
+}
+
+/* Párpados */
+.eye::after {
+    content: '';
+    position: absolute;
+    top: 0; /* Párpado en la parte superior */
+    left: 0;
+    height: 0; /* Inicialmente, el párpado está cerrado */
+    width: 100%; /* Ancho completo */
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; /* Forma de la salida del párpado igual al del eye*/
+    background: black; /* Color negro para el párpado */
+    animation: blink 4s infinite ease-in; /* Animación de parpadeo */
+}
+
+@keyframes blink {
+    0% { height: 0; }
+    90% { height: 0; }
+    92.5% { height: 100%; }
+    95% { height: 0; }
+    97.5% { height: 100%; }
+    100% { height: 0; }
+}
+
+/* Punta de los ojos */
+.eye::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Posición de la punta */
+    height: 10%; /* Altura de la punta */
+    width: 15%; /* Ancho de la punta */
+    background: white; /* Color blanco para la punta */
+    border-radius: 50%; /* Forma redondeada */
+}
+
+.eye--left {
+    left: 0; /* Posición del ojo izquierdo */
+}
+
+.eye--left::before {
+    right: -5%; /* Ajuste de la posición de la punta */
+}
+
+.eye--right {
+    right: 0; /* Posición del ojo derecho */
+}
+
+.eye--right::before {
+    left: -5%; /* Ajuste de la posición de la punta */
+}
+
+/* Pupilas */
+.eye-pupil {
+    position: absolute;
+    top: 30%; /* Posición vertical de la pupila */
+    height: 50%; /* Altura de la pupila */
+    width: 30%; /* Ancho de la pupila */
+    background: #8472c1; /* Color 72b8c1 para la pupila -- anterior estaba en negro */
+    border-radius: 50%; /* Forma redondeada */
+    animation: look-around 7s infinite; /* Animación de movimiento de la pupila */
+}
+
+@keyframes look-around {
+    0% { transform: translate(0); }
+    5% { transform: translate(70%, -1%); }
+    10% { transform: translate(0); }
+    15% { transform: translate(-5%, -2%); }
+    20% { transform: translate(0); }
+}
+
+/* detalles de la nariz*/
+.muzzle {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	height: 6%;/* Aumentar altura para un mejor efecto */
+	width: 10%;
+	background: rgb(255, 255, 255);
+	transform: translateX(-30%) rotate(-45deg);
+	border-radius: 50% 50% 50% 50%;
+}
+.muzzle1 {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	height: 6%;/* Aumentar altura para un mejor efecto */
+	width: 10%;
+	background: rgb(255, 255, 255);
+	transform: translateX(-70%) rotate(45deg);
+	border-radius: 50% 50% 50% 50%;
+}
+
+/* detalles de la bigote*/
+.bigote1{
+	position: absolute;
+	top: 61%;
+	left: 30%;
+    width: 40%;
+    border-top: 2px solid #ffffff;
+    margin: 20px 0;
+    transform: rotate(10deg);
+}
+
+.bigote2{
+    position: absolute;
+	top: 61%;
+	left: 30%;
+    width: 40%;
+    border-top: 2px solid #ffffff;
+    margin: 20px 0;
+    transform: rotate(-10deg);
+}
+/* detalles de separacion de bigotes */
+.circulo{
+    position: absolute;
+	top: 65%;
+	left: 50%;
+	height: 15%;/* Aumentar altura para un mejor efecto */
+	width: 15%;
+	background: #161616;
+	transform: translateX(-50%);
+	border-radius: 50% 50% 50% 50%;
+}
+/* detalles de la boca*/
+.Boca-curvada {
+	position: absolute;
+	top: 62%;
+	left: 114%;
+    width: 25px; /* Ancho de la línea */
+    height: 60px; /* Altura para mostrar la curvatura */
+    border-top: 2px solid rgb(255 255 255); /* Grosor y color de la línea */
+    border-radius: 30px; /* Curvatura de la línea */
+    margin: 20px 0; /* Espacio alrededor */
+	transform: rotate(200deg) translateX(500%);
+}
+.Boca-curvada1 {
+	position: absolute;
+	top: 57%;
+	left: 40%;
+    width: 25px; /* Ancho de la línea */
+    height: 60px; /* Altura para mostrar la curvatura */
+    border-top: 2px solid rgb(255 255 255); /* Grosor y color de la línea */
+    border-radius: 30px; /* Curvatura de la línea */
+    margin: 20px 0; /* Espacio alrededor */
+	transform: rotate(-200deg)translateY(60%) ;
+}
+
+/* detalles del mensaje */
+
+.msj{
+	color: rgb(187, 255, 0);
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-160%,-175%);
+    z-index: 1;
+    text-align: center;
+}
+
+/* detalles de la nube */
+
+/* .nube{
+    background-color: #f0f0f0;
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    width: 100px;
+    margin: 20px;
+    box-shadow: 0 4px 15px rgb(0, 0, 0,0.2);
+    overflow: hidden;
+}
+
+.imagen{
+    width: 250px;
+    max-height: 250px;
+    height: auto;
+    
+}*/
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.message {
+    flex: 1;
+    color:white;
+    margin-bottom: 200px;
+	margin-right: 100px;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Color del botón */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.button:hover {
+    background-color: #45a049; /* Color del botón al pasar el mouse */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px;
+    color:white;
+    margin-bottom: 10px;
+}
+.carta p {
+    margin-bottom: 300px; /* Espacio entre la fecha y el botón */
+	
+}
+.button i {
+    margin-left: 5px; /* Espacio entre el texto y el ícono */
+}
+
+/* --------------------------------------------------------*/
+/*.letter-image {
+    position: relative;
+    top: 40%;
+    left: 20%;
+    width:20px;
+    height: 100px;
+    transform: translate(-50%, -50%); /* Centra el sobre en la pÃ¡gina 
+    cursor: pointer; /* Cambia el cursor al pasar el mouse 
+}
+*/
+.letter-image {
+    position: relative;
+    top: 40%;
+    left: 100%;
+    width: 20px;
+    height: 100px;
+    transform: translate(-1250%, 1%); /* Centra el sobre en la pÃ¡gina */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+}
+.animated-mail {
+    position: absolute;
+    height: 200px;
+    width: 250px;
+    transition: .4s; /* TransiciÃ³n suave para las animaciones */
+}
+
+.body {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 100px 100px; /* Forma triangular para el cuerpo del sobre */
+    border-color: transparent transparent #e95f55 transparent; /* Color del cuerpo */
+    z-index: 2; /* Mantiene el cuerpo por encima */
+}
+
+.top-fold {
+    position: absolute;
+    top: 100px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 50px 50px 50px; /* Forma triangular para la parte superior */
+    transform-origin: 30% 0%; /* Punto de pivote para la rotaciÃ³n */
+    transition: transform .4s .4s, z-index .2s .4s; /* TransiciÃ³n para abrir el sobre */
+    border-color: #cf4a43 transparent transparent transparent; /* Color de la parte superior */
+    z-index: 2; /* Mantiene la parte superior por encima */
+}
+
+.back-fold {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 100px; /* Parte trasera del sobre */
+    background: #cf4a43; /* Color de la parte trasera */
+    z-index: 0; /* Parte trasera detrÃ¡s */
+}
+
+.left-fold {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 50px 1px 50px 50px; /* Forma triangular para la parte izquierda */
+    border-color: transparent transparent transparent #e15349; /* Color de la parte izquierda */
+    z-index: 2; /* Mantiene la parte izquierda por encima */
+}
+
+.letter {
+    left: 10px;
+    bottom: 0px;
+    position: absolute;
+    width: 80px;
+    height: 80px; /* Dimensiones de la carta */
+    background: white; /* Fondo blanco para la carta */
+    z-index: 1; /* Mantiene la carta en el medio */
+    overflow: hidden; /* Oculta el contenido que sobresale */
+    transition: .4s .2s; /* TransiciÃ³n para animaciones */
+}
+
+.letter-border {
+    height: 10px;
+    width: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        #cb5a5e,
+        #cb5a5e 8px,
+        transparent 8px,
+        transparent 18px
+    ); /* Borde con un efecto de rayas */
+}
+
+.letter-title {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 50%; /* Dimensiones del tÃ­tulo */
+    background: #cb5a5e; /* Color del tÃ­tulo */
+}
+
+.letter-context {
+    margin-top: 10px;
+    margin-left: 5px;
+    height: 10px;
+    width: 30%; /* Dimensiones del contenido */
+    background: #cb5a5e; /* Color del contenido */
+}
+
+.letter-stamp {
+    margin-top: 30px;
+    margin-left: 150px;
+    border-radius: 100%; /* Sello redondeado */
+    height: 40px;
+    width: 40px; /* Dimensiones del sello */
+    background: #cb5a5e; /* Color del sello */
+    opacity: 0.3; /* Transparencia del sello */
+}
+
+.shadow {
+    position: absolute;
+    top: 260px; /* PosiciÃ³n de la sombra */
+    left: 250%;
+    width: 300px;
+    height: 30px;
+    transition: .4s; /* TransiciÃ³n suave para la sombra */
+    transform: translateX(-50%); /* Centra la sombra */
+    border-radius: 100%; /* Sombra redondeada */
+    background: radial-gradient(rgb(255 255 255 / 50%), rgba(0,0,0,0.0), rgba(0,0,0,0.0)); /* Sombra con degradado */
+}
+
+/* Efectos al pasar el mouse sobre el sobre */
+.letter-image:hover {
+    .animated-mail {
+        transform: translateY(50px); /* Baja el sobre al pasar el mouse */
+    }
+    
+    .animated-mail .top-fold {
+        transform: rotateX(180deg); /* Rota la parte superior al abrirse */
+        z-index: 0; /* Mueve la parte superior detrÃ¡s */
+    }
+    
+    .animated-mail .letter {
+        height: 150px; /* Aumenta la altura de la carta */
+    }
+    
+    .shadow {
+        width: 200px; /* Aumenta el tamaÃ±o de la sombra */
+    }
+}

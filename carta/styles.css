@@ -1,0 +1,145 @@
+body {
+    background: #010113; /* Color de fondo de la página */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+h1, h2, p {
+    margin: 0; /* Elimina márgenes por defecto */
+    text-align: center;
+}
+
+.letter-image {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para pantallas grandes */
+    margin: 0 auto;
+}
+
+.animated-mail {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    transition: 0.4s; /* Transición suave para las animaciones */
+}
+
+.letter {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para la carta */
+    height: auto; 
+    padding: 20px; /* Ajusta el padding */
+    background: white;
+    z-index: 1;
+    overflow: hidden;
+    transition: 0.4s 0.2s;
+    border-radius: 10px; /* Añade esquinas redondeadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.letter-border {
+    height: 10px;
+    width: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        #cb5a5e,
+        #cb5a5e 8px,
+        transparent 8px,
+        transparent 18px
+    ); /* Borde con un efecto de rayas */
+}
+
+.letter-title {
+    margin: 10px 0;
+    height: 10px;
+    width: 50%; /* Ajuste para la anchura del título */
+    background: #cb5a5e; /* Color del título */
+}
+
+.letter-context {
+    margin: 10px 0;
+    height: 10px;
+    width: 30%; /* Ajuste para la anchura del contenido */
+    background: #cb5a5e; /* Color del contenido */
+}
+
+.letter-stamp {
+    margin: 20px auto;
+    width: 50px;
+    height: 50px;
+    background: #cb5a5e;
+    border-radius: 50%;
+    position: relative;
+}
+
+.letter-stamp-inner {
+    width: 80%;
+    height: 80%;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+img {
+    width: 100%;
+    max-width: 200px; /* Tamaño máximo de la imagen */
+    display: block;
+    margin: 20px auto;
+}
+
+h1 {
+    font-size: 16px; /* Tamaño adaptable */
+}
+
+h2 {
+    font-size: 14px; /* Tamaño adaptable */
+}
+
+p {
+    font-size: 12px; /* Tamaño adaptable */
+}
+
+/* Media queries para pantallas medianas y grandes */
+@media (min-width: 768px) {
+    .letter {
+        max-width: 600px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .letter {
+        max-width: 800px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
